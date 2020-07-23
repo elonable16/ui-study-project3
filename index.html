@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <title>wedding_invition</title>
+    <style>
+        li {list-style:none;}
+        /* .은 관련 #은 ip값 */
+        .photo{list-style:none; padding:0; margin:0;}
+        /* -가 없으면 자손 태그 */
+        .photo li{float: left; width: 50%;}
+        .photo li a{display: block; margin:5px; border:1px;}
+        .photo li img{display: block; width: 230px; height: 230px;}
+        .photo li img:hover{display: block; width: 300px; height: 300px;}
+    </style>
+</head>
+<body>
+    <!-- 첫 페이지 -->
+    <div data-role="page" id="home">
+        <div data-role="header">
+            <h3>Beautiful Life</h3>
+        </div>
+        <div data-role="content" style="text-align: center;">
+            <img src="img/wedding.jpg" width="460px" alt="wedding"><br>
+            <span style="font-size: 0.2em;">연애가 결혼보다 즐거운 것은 소설이 역사보다도 재미있는 것과 같은 이유다.<br>
+            <span style="font-size: 0.2em;">-샹포르-</span><br>
+            <ul data-role="listview" data-inset="true">
+                <li><a href="#story">love story</a></li>
+                <li><a href="#music" data-rel="dialog">music</a></li>
+                <li><a href="#photo">photo album</a></li>
+                <li><a href="#video" data-rel="dialog">weding video</a></li>
+                <li><a href="#">location</a></li>
+            </ul>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <span style="text-align: right;" class="ui-bar"><small>copyright : KIM ELON<br>
+                all right reserved
+            </small></span>
+        </div>
+    </div>
+
+    <!-- 두번째 페이지 사진첩 story -->
+    <div data-role="page" id="story">
+        <div data-role="header">
+            <a href="#home"><img src="icons/home-black.png" alt="홈 아이콘"></a>
+            <h3>Beautiful Life</h3>
+        </div>
+        <!-- collapsible 데이터 하나로 그룹화 -->
+        <div data-role="content" style="text-align: center;">
+            <img src="img/story.jpg" alt="story" width="460px">
+            <div data-role="collapsible-set">
+                <div data-role="collapsible">
+                    <h4>first</h4>
+                    <p> 17살 친구와 놀러갔던 카니발에서 신나게 노는 앨리를 보고 첫눈에 반한 노아
+                        적극적인 애정공세를 펼쳤다.
+                        앨리는 쉽게 넘어가지 않고 몇 번을 튕겨줍니다.
+                    </p>
+                </div>
+                <div data-role="collapsible">
+                    <h4>love story</h4>
+                    <p> 어느날, 야밤에 둘을 만나게 되었고,
+                        그날 밤 앨리는 노아에게 매력을 느끼게 되었습니다.
+                        자신에게 부족한 모습을 서로에게서 발견하게 되어 사랑에 빠지게 되었습니다.
+                    </p>
+                </div>
+                <div data-role="collapsible">
+                    <h4>wedding</h4>
+                    <p>
+                        부모님의 반대라는 장애물에 막혀 잠시 헤어졌었지만,
+                        우연히 다시 만나 오해와 추억을 되새기며 다시 사랑하게 되었고
+                        이렇듯 결혼을 하게 되었습니다.
+                    </p>    
+                </div>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <span><a href="https://m.naver.com" data-role="button" data-icon="cloud" data-iconpos="notext"></a></span>
+            <span style="text-align: right;" class="ui-bar"><small>copyright : KIM ELON<br>
+                all right reserved
+            </small></span>
+        </div>
+    </div>
+
+
+    <!-- 세번째 페이지 music -->
+    <div data-role="page" id="music" data-position="fixed">
+        <div data-role="header">
+            <h3>Beautiful Life</h3>
+        </div>
+        <div data-role="content">
+            <!-- video 불러오기 -->
+            <div class="ui-bar">
+                <div class="ui-bar ui-bar-b">음악 1</div>
+            </div>
+            <ul>
+                <li>
+                    <audio controls width="100%">
+                        <source src="mus/01.mp3" type="audio/mp4">
+                    </audio>
+                </li>
+            </ul>
+            <div class="ui-bar">
+                <div class="ui-bar ui-bar-b">음악 2</div>
+            </div>
+            <ul>
+                <li>
+                    <audio controls width="100%">
+                        <source src="mus/02.mp3" type="audio/mp4">
+                    </audio>
+                </li>
+            </ul>
+        </div>
+        <div data-role="footer">
+
+        </div>
+    </div>
+
+
+    <!-- 세번째 페이지 photo -->    
+    <div data-role="page" id="photo">
+        <div data-role="header">
+            <a href="#home"><img src="icons/home-black.png" alt="홈 아이콘"></a>
+            <h3>Beautiful Life</h3>
+        </div>
+        <div data-role="content">
+            <!-- 이미지 격자형 그룹화 2열 3행 -->
+            <!-- a태그에 이미지를 넣어 이미지 확대가 가능하도록 만듬 -->
+            <!-- <div class="ui-grid-a" class="pho">
+                <div class="ui-block-a"><a href="img/album1.jpg" rel="external"><img src="img/album1.jpg" alt="album1" width="230px" height="230px"></a></div>
+                <div class="ui-block-b"><a href="img/album2.jpg" rel="external"><img src="img/album2.jpg" alt="album2" width="230px" height="230px"></a></div>
+                <div class="ui-block-a"><a href="img/album3.jpg" rel="external"><img src="img/album3.jpg" alt="album3" width="230px" height="230px"></a></div>
+                <div class="ui-block-b"><a href="img/album4.jpg" rel="external"><img src="img/album4.jpg" alt="album4" width="230px" height="230px"></a></div>
+                <div class="ui-block-a"><a href="img/album5.jpg" rel="external"><img src="img/album5.jpg" alt="album5" width="230px" height="230px"></a></div>
+                <div class="ui-block-b"><a href="img/album6.jpg" rel="external"><img src="img/album6.jpg" alt="album6" width="230px" height="230px"></a></div>
+            </div> -->
+            <ul class="photo">
+                <li><a href="img/album1.jpg" rel="external"><img src="img/album1.jpg" alt="album1" width="230px" height="230px"></a></li>
+                <li><a href="img/album2.jpg" rel="external"><img src="img/album2.jpg" alt="album2" width="230px" height="230px"></a></li>
+                <li><a href="img/album3.jpg" rel="external"><img src="img/album3.jpg" alt="album3" width="230px" height="230px"></a></li>
+                <li><a href="img/album4.jpg" rel="external"><img src="img/album4.jpg" alt="album4" width="230px" height="230px"></a></li>
+                <li><a href="img/album5.jpg" rel="external"><img src="img/album5.jpg" alt="album5" width="230px" height="230px"></a></li>
+                <li><a href="img/album6.jpg" rel="external"><img src="img/album6.jpg" alt="album6" width="230px" height="230px"></a></li>
+            </ul>
+        </div>
+        <div data-role="footer">
+
+        </div>
+    </div>
+
+
+    <!-- 네번째 페이지 video -->  
+    <div data-role="page" id="video" data-position="fixed">
+        <div data-role="header">
+            <h3>Beautiful Life</h3>
+        </div>
+        <div data-role="content">
+            <!-- video 불러오기 -->
+            <div class="ui-bar">
+                <div class="ui-bar ui-bar-b">Our Wedding Day</div>
+            </div>
+            <ul>
+                <li>
+                    <video controls width="460px">
+                        <source src="video/wedding_video.mp4" type="video/mp4">
+                    </video>
+                </li>
+            </ul>
+
+            <!-- <div class="ui-bar">
+                <div class="ui-bar ui-bar-b">Our Wedding Day</div>
+            </div>
+            <ul>
+                <li>
+                    <video controls width="460px">
+                        <source src="video/wedding_video.mp4" type="video/mp4">
+                    </video>
+                </li>
+            </ul> -->
+        </div>
+        <div data-role="footer">
+
+        </div>
+    </div>
+
+
+    <div data-role="page" id="location">
+        <div data-role="header">
+
+        </div>
+        <div data-role="content">
+
+        </div>
+        <div data-role="footer">
+            <span style="text-align: right;" class="ui-bar"><small>copyright : KIM ELON<br>
+                all right reserved
+            </small></span>
+        </div>
+    </div>
+</body>
+</html>
